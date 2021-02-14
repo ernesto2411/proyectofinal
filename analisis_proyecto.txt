@@ -1,0 +1,25 @@
+ANALISIS DE LA COTIZACION
+
+En esta cotizacion se requiere de informacion basica de la persona que esta aplicando
+para una poliza de seguro, lo que se busca es saber el total que pagara el
+candidato al seguro. 
+
+La informacion basica que se busca es la siguiente:
+
+nombre del candidato
+edad del candidato(el cual tiene que ser mayor de edad para aplicar al seguro) asi mismo
+hay un recargo en el seguro el cual varia dependiendo de la edad del asegurado.
+
+El estado civil del mismo, de ser cierta esta pregunta se preguntara la edad
+del conyuge ya que el seguro cubriria a las dos personas y por la edad del conyuge
+hay una recargo adicional ya que los recargos van por rango de edad.
+
+Se necesita saber si el candidato a la poliza de seguro tiene hijos y si esta pregunta
+llega a ser afirmativa se le cobrara un recargo por cada hijo
+
+de esta manera se podra tener un monton que el candidato pagaria parar tener a su familia
+asegurada.
+
+Estariamos tomando en consideracion quitar de la cotizacion la parte de propiedades ya que sabemos
+que el recargo es demasiado alto(35%) y si la cotizacion muestra un valor demasiado alto, el cliente 
+potencial podria perder interes.

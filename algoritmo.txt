@@ -1,0 +1,166 @@
+ALGORITMO
+Se busca crear un programa que ayude a la empresa
+a dejar de hacer cotizaciones manuales y las empiece a 
+hacer digitalmente esto hara que se ahorre tiempo
+y dara una cifra exacta de lo que tienen que pagar nuestros
+clientes cuando adquieran el seguro con nosotros.
+
+Estaremos utilizando javascript para hacer esta cotizacion de 
+forma digital
+
+paso 1:
+lo primero sera leer los requerimientos que se necesitan preguntar
+al cliente que solicita la cotizacion.
+
+Estos son los requerimientos:
+
+el nombre del cliente
+la edad del cliente 
+el estado civil del cliente y si esta pregunta es afirmativa
+se pregunta la edad del conyuge
+Tiene hijos el cliente y si esto es afirmativo preguntar
+cuantos hijos tiene
+Tiene alguna propiedad el cliente y si es afirmativo se le 
+pregunta cuantas propiedades tiene
+El salario mensual que devenga el cliente.
+
+paso 2:
+con la informacion del paso 1 se procede a crear las primeras
+variable en javascript las cuales nos serviran para guardar 
+los datos del paso 1.
+las variables en javascript se declaran asi: var y luego el nombre
+de la variable.
+
+las primeras variables que utilizaremos son:
+
+var nombre: esta variable guardara el nombre del cliente
+utilizaremos un prompt para la persona que este preguntando la informacion
+al cliente pueda escribirla y asi se guarde en la variable
+
+var edad: esta variable guardara la edad del cliente, se utilizara un prompt tambien
+
+var casado: esta variable utilizara la pregunta cerrada si/no para verificar 
+si el cliente esta casado/a, tambien se utilizara un prompt para esto.
+
+var edad_conyuge: esta variable se utilizara cuando la respuesta del cliente sea si
+cuando le preguntemos si esta casado, para hacer la comparacion de respuestas se 
+utilizara un if el cual va a comparar la respuesta del cliente y si la respuesta es "SI", hara la pregunta cual es la edad
+de su conyuge y esta variable almacenara la edad del conyuge.
+luego se utilizara el metodo parseInt para convertir el valor ingresado a numero
+
+var hijos : Esta variable almacenara la respuesta si/no del cliente acerca de si tiene hijos
+tambien se utilizara un prompt para la misma.
+
+var cantidad_hijos:  si la respuesta es "si" cuando le preguntemos al cliente si tiene hijos
+en esa variable almacenaremos el numero de hijos que tendra. Utilizaremos el metodo parseInt
+para convertir el dato ingresado a numero
+
+
+var propiedad: en esta variable  se almacenaran la respuesta a la pregunta tiene usted una 
+propiedad si/no, utilizaremos un prompt tambien para guardar la respuesta de esta pregunta
+
+var calculo_propiedad:en esta variable se guardara el numero de propiedades que tenga el cliente
+esta misma utilizara un prompt tambien y solo sera utilizable si en la variable propiedad la respuesta
+es si y para hacer esta comparacion utilizaremos un if.
+
+var salario:  esta variable almacenara el salario devengado del cliente, en esta variable
+haremos uso de un prompt tambien.
+
+paso 3:
+el banco trabaja con tarifas y recargos que varian en cuanto a la edad del cliente
+edad del conyuge, si tiene hijos, si es dueño de alguna propiedad y tambien el salario devengado
+del mismo. La empresa de seguros trabaja con un precio base para el calculo de recargos el cual
+es de Q2000.00
+
+si el cliente tiene una edad de 18 a 24 años se le hacer un recargo del 10% del precio base.
+
+si tiene de 25 a 49 años se le hace un recargo del 20% del precio base.
+
+si tiene mas de 50 años se le hace un recargo del 30% del precio base.
+
+estos mismo recargos se aplicaran al conyuge en base a su edad.
+
+estos recargos son acumulativos. el seguro hace un recargo del %20 del precio base por cada
+hijo que el cliente vaya a asegurar. El unico recargo obligatorio que hace el seguro es sobre
+la edad del asegurado ya que el seguro no exige que el asegurado este casado y/o tenga hijos, y/o propiedades
+
+En base a esta informacion se crearan variables que almacenaran los datos especificos de los recargos
+
+var edad_18 = 0.1: esta variable almacenara el 10% se le calculara como recargo a la edad del cliente la cual sera
+valida si entra en el rango de 18 a 24 años.
+
+var edad_25= 0.2: esta variable almacenara el 20% se le calculara como recargo a la edad del cliente la cual sera
+valida si entra en el rango de 25 a 49 años.
+
+var edad_50 = 0.3: esta variable almacenara el 30% se le calculara  como recargo a la edad del cliente la cual sera
+valida si entra en el rango de mayor o igual a 50 años.
+
+var casado_18 = 0.1 :esta variable almacenara el 10% se le calculara como recargo a la edad del conyuge la cual sera
+valida si entra en el rango de 18 a 24 años.
+
+var casado_25 = 0.2 :esta variable almacenara el 20% se le calculara como recargo a la edad del conyuge la cual sera
+valida si entra en el rango de 25 a 49 años.
+
+var casado_50 = 0.3 :esta variable almacenara el 30% se le calculara como recargo a la edad del conyuge la cual sera
+valida si entra en el rango de 50 años o mas.
+
+var precio_base: esta variable almacenara un valor constante de 2000, el cual se utilizara
+para hacer los calculos en la mayoria de los casos.
+
+
+var recargo_hijos: esta variable almacenara el 20% se que le calculara como recargo al total de hijos que el
+cliente tenga.
+
+var recargo_salario: esta variable almacenara el 5% que se le calculara como recargo al salario del cliente.
+
+paso cuatro:
+
+se procede a crear las variables en javascript, en este caso seria todas las variables que ya se especificaron
+anteriormente.
+
+paso 5:
+
+con las variables ya creadas se procede a utilizarlas y a declararalas con los prompts que seran
+lo que utilizaremos para poder colectar la informacion que necesitamos saber del cliente 
+y asi mismo empezaremos a utilizar IF cuando aplique en las preguntas cerradas si/no.
+
+paso 6:
+
+ya con la informacion recolectada se procedera a hacer las comparaciones y a hacer los if/else if
+para con los rangos de edades para sacar los cargos, tambien se utilizaran if para la informacion
+relacionada sobre propiedades asi se le estara aplicando el cargo y se utilizara un alert 
+en cada opcion el cual desplegara cual es el recargo que se esta aplicando.
+
+paso 7:
+despues de tener todos los recargos hechos y tener los calculos hechos se procede a hacer el recargo total
+que sera la suma de todos los recargos anteriormente mencionados, para esta operacion se creara la variable
+recargo_total.
+
+
+paso 8:
+se procede a hacer a sacar el precio final el cual sera la suma del recargo total mas el precio base para eso
+se utilizara la variable precio_final.
+
+paso 9:
+
+ya para terminar se procede a crear 3 alert en la primera desplegara el nombre del cliente,
+en la segunda desplegara el resultado que esta alojado en la variable recargo_total y en la 
+tercera alert desplegara el resultado de la variable precio_final.
+
+paso 10
+ya con todas el programa creado se procede a compilarlo en su editor de texto que mas prefiera
+esto con el objetivo de confirmar que el codigo funcione al 100% y corregir potenciales errores
+si en caso los hubiese.
+
+paso 11:
+
+la empresa aseguradora pide que este programa se este corriendo todo el tiempo y que solo termine
+si el usuario escribe la palabra "salir" para usar esto usaremos el ciclo while y crearemos una variable
+que se llame transaccion la cual almacenara la palabra salir solo cuando el usuario la escriba.
+entonces crearemos un prompt que diga "si desea salir del programa escriba salir" y ahi se alojara nuestra
+respuesta y dentro del ciclo while pondremos que siempre se repita la cotizacion a menos que el usuario
+ingrese la palabra "salir". para quedar asi while(transaccion != "salir").
+
+
+
+

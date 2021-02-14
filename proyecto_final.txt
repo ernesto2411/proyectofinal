@@ -1,0 +1,104 @@
+//noprotect
+var precio_base = 2000
+
+var edad_18 = 0.1
+var edad_25 = 0.2
+var edad_50 = 0.3
+
+var casado_18 = 0.1
+var casado_25 = 0.2
+var casado_50 = 0.3
+
+var recargo_hijos = 0.2
+
+var recargo = 0
+var recargo_total = 0
+var recargo_conyuge=0
+var recargo_totalhijos=0
+
+var precio_final = 0
+
+var salario
+var recargo_salario = 0.05
+var recargo_finalsalario
+
+var calculo_propiedad
+var recargo_propiedad = 0.35
+var recargo_finalpropiedad=0
+
+var transaccion
+
+while(transaccion != "salir"){
+var nombre = prompt("Ingrese su nombre, por favor")
+var edad = prompt("¿Cuantos años tiene? Ingrese solamente números ")
+
+var casado = prompt("¿Está casado actualmente?")
+
+var edad_conyuge
+if("SI" == casado.toUpperCase()){
+  edad_conyuge = prompt("¿Que edad tiene su esposo/a?,ingrese solo numeros")
+}
+
+var edad_numero = parseInt(edad)
+var edad_conyuge_numero = 0
+
+if("SI" == casado.toUpperCase()){
+  edad_conyuge_numero = parseInt(edad_conyuge)
+}
+
+var hijos = prompt("¿Tiene hijos o hijas?")
+
+var cantidad_hijos
+
+if(hijos=="si"){
+  cantidad_hijos=parseInt(prompt("Cuantos hijos tiene? ingrese solo numeros"))
+  recargo_totalhijos= (cantidad_hijos*recargo_hijos)*precio_base
+  alert("el recargo total para su hijo/a/hijos es de:"+" "+recargo_totalhijos)
+}
+var propiedad
+
+propiedad= prompt("Tiene usted alguna propiedad a su nombre si/no")
+
+if (propiedad =="si"){
+calculo_propiedad= parseInt(prompt("Ingrese el numero de propiedades que tiene ingrese solo numeros por favor"))
+recargo_finalpropiedad= (calculo_propiedad * recargo_propiedad)*precio_base
+alert("Este sera el recargo que se le estara aplicando en base a las propiedades que estan a su nombre"+"  "+recargo_finalpropiedad)
+}
+
+
+
+salario=prompt("ingrese su salario actual")
+recargo_finalsalario= (salario*recargo_salario)
+alert("este sera el recargo que se le aplicara en base a lo que usted devenga actualmente"+"  "+recargo_finalsalario)
+
+if(edad >=18 && edad <=24){
+  recargo=precio_base*edad_18
+} else if (edad >=25 && edad <=49){
+  recargo= precio_base * edad_25
+} else if (edad >=50){
+  recargo = precio_base* edad_50
+}
+
+if(edad_conyuge >=18 && edad_conyuge <=24){
+  recargo_conyuge= precio_base* casado_18
+  alert("el recargo para su conyuge es de"+" "+recargo_conyuge)
+} else if (edad_conyuge >=25 && edad_conyuge <=49){
+  recargo_conyuge= precio_base * casado_25
+  alert("el recargo para su conyuge es de"+" "+recargo_conyuge)
+} else if (edad_conyuge >=50){
+  recargo_conyuge = precio_base * casado_50
+  alert("el recargo para su conyuge es de"+" "+recargo_conyuge)
+}
+
+
+recargo_total = (recargo+recargo_conyuge+recargo_totalhijos+recargo_finalpropiedad+recargo_finalsalario)
+
+
+
+precio_final = (precio_base + recargo_total)
+
+alert ("Para el asegurado "+"  "+nombre)
+alert ("El recargo total sera de: "+"  "+recargo_total)
+alert ("El precio sera de: "+"  "+precio_final)
+transaccion =prompt("si desea salir del programa escriba salir")
+}
